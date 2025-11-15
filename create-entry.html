@@ -1,0 +1,30 @@
+<!doctype html><html><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Create Entry</title>
+<link rel="stylesheet" href="styles/main.css">
+</head><body>
+<div class="container center">
+  <div class="card overlay-mock">
+    <h3>Create Entry</h3>
+    <label>Subject</label>
+    <input id="entrySubject" class="input" placeholder="Enter topic name">
+    <label>Upload Content (paste)</label>
+    <textarea id="entryContent" class="input" style="height:120px"></textarea>
+    <div style="margin-top:12px" class="center">
+      <button id="addEntry" class="btn">Add</button>
+    </div>
+  </div>
+</div>
+<script>
+document.getElementById('addEntry').addEventListener('click', ()=>{
+  const subj = document.getElementById('entrySubject').value || 'Untitled';
+  const content = document.getElementById('entryContent').value || '';
+  // store entries as demo list
+  const list = JSON.parse(localStorage.getItem('ukino_entries')||'[]');
+  list.unshift({subj, content, created:Date.now()});
+  localStorage.setItem('ukino_entries', JSON.stringify(list));
+  // go back to dashboard
+  window.location.href = 'dashboard.html';
+});
+</script>
+</body></html>
