@@ -1,0 +1,59 @@
+<!doctype html><html><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ukino — Dashboard</title>
+<link rel="stylesheet" href="styles/main.css">
+</head><body>
+<div class="container">
+  <div style="display:flex;justify-content:space-between;align-items:center">
+    <h2 style="color:#cfcfe3">Dashboard</h2>
+    <div class="small-note">Welcome, <span id="userName">...</span></div>
+  </div>
+  <div style="display:flex;gap:12px;margin-top:18px;flex-wrap:wrap">
+    <div class="card" style="width:320px">
+      <h4>Upcoming Review</h4>
+      <ul>
+        <li>Sorting Algorithms</li>
+        <li>Leetcode #12</li>
+      </ul>
+      <button class="btn small" onclick="go('upcoming.html')">Open Upcoming</button>
+    </div>
+
+    <div class="card" style="width:240px">
+      <h4>Calendar</h4>
+      <div class="center" style="height:140px"><button class="btn small" onclick="openPopup('calendar.html')">Open</button></div>
+    </div>
+
+    <div class="card" style="width:240px">
+      <h4>Create Entry</h4>
+      <div class="center" style="height:140px">
+        <button class="btn small" onclick="openPopup('create-entry.html')">Create Entry</button>
+      </div>
+    </div>
+
+    <div class="card" style="width:240px">
+      <h4>Focus Music</h4>
+      <div class="center" style="height:140px">
+        <button class="btn small" onclick="openPopup('music.html')">Open Music</button>
+      </div>
+    </div>
+
+    <div class="card" style="width:240px">
+      <h4>Pomodoro</h4>
+      <div class="center" style="height:140px">
+        <button class="btn small" onclick="openPopup('pomodoro.html')">Open</button>
+      </div>
+    </div>
+
+    <div class="card" style="width:520px;margin-top:12px">
+      <h4>Progress</h4>
+      <!-- placeholder for graph image -->
+      <div style="height:140px;background:#f6f8ff;border-radius:8px" class="center">Graph area</div>
+    </div>
+  </div>
+</div>
+
+<script src="scripts/nav.js"></script>
+<script>
+document.getElementById('userName').innerText = localStorage.getItem('ukino_user') || 'guest';
+</script>
+</body></html>
