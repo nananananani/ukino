@@ -1,0 +1,20 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Code Editor</title>
+<link rel="stylesheet" href="styles/main.css"></head><body>
+<div class="container">
+  <div class="card overlay-mock">
+    <h3>Code Editor</h3>
+    <textarea id="codeEditor" class="code-editor" placeholder="print('Hello World')"></textarea>
+    <div style="margin-top:12px" class="center">
+      <button id="runCode" class="btn">Run</button>
+    </div>
+  </div>
+
+  <!-- output overlay mock -->
+  <div id="outputWrap" class="hidden center" style="margin-top:12px">
+    <div class="output" id="codeOutput"></div>
+  </div>
+</div>
+
+<script src="scripts/code.js"></script>
+</body></html>
