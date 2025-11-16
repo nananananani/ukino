@@ -1,0 +1,33 @@
+<!doctype html><html><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Quiz Page</title>
+<link rel="stylesheet" href="styles/main.css">
+</head><body>
+<div class="container">
+  <div class="card overlay-mock">
+    <h3 id="quizTopic">Quiz</h3>
+    <div id="quizContainer"></div>
+    <div class="center" style="margin-top:12px">
+      <button id="submitQuiz" class="btn">Submit</button>
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', ()=>{
+  const data = JSON.parse(localStorage.getItem('ukino_quiz')||'null');
+  const container = document.getElementById('quizContainer');
+  if(!data){ container.innerHTML = '<p>No quiz generated yet.</p>'; return; }
+  document.getElementById('quizTopic').innerText = data.topic;
+  container.innerHTML = data.questions.map((q,i)=>{
+    return `<div style="margin-bottom:10px">
+      <strong>${i+1}. ${q.q}</strong>
+      <div>${q.a.map((opt,idx)=>`<label style="display:block"><input type="radio" name="q${i}"> ${opt}</label>`).join('')}</div>
+    </div>`;
+  }).join('');
+  document.getElementById('submitQuiz').addEventListener('click', ()=> {
+    window.location.href = 'upcoming.html';
+  });
+});
+</script>
+</body></html>
