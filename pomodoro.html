@@ -1,0 +1,22 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pomodoro</title>
+<link rel="stylesheet" href="styles/main.css"></head><body>
+<div class="container center">
+  <div class="card overlay-mock">
+    <h3>Breadcrumb Pomodoro</h3>
+    <label>Study for (minutes)</label>
+    <input id="pomMinutes" class="input" placeholder="25">
+    <label>Intervals</label>
+    <input id="pomIntervals" class="input" placeholder="4">
+    <div style="margin-top:12px" class="center">
+      <button id="startPom" class="btn">Start</button>
+    </div>
+    <div style="margin-top:12px">
+      <div id="pomTimer" class="small-note">00:00</div>
+      <div id="crumbs" class="crumbs"></div>
+    </div>
+  </div>
+</div>
+
+<script src="scripts/pomodoro.js"></script>
+</body></html>
