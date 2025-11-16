@@ -14,8 +14,9 @@
 
 <script>
 document.getElementById('submitDiff').addEventListener('click', ()=>{
-
-  window.location.href = 'upcoming.html';
+ const v = parseInt(document.getElementById('diff').value || '3',10);
+ localStorage.setItem('ukino_difficulty', v);
+ window.location.href = 'upcoming.html';
 });
 </script>
 </body></html>
