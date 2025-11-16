@@ -1,0 +1,21 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Difficulty</title>
+<link rel="stylesheet" href="styles/main.css"></head><body>
+<div class="container center">
+  <div class="card overlay-mock">
+    <h3>Difficulty Rating</h3>
+    <label>How easy was it? (1-5)</label>
+    <input id="diff" class="input" placeholder="3">
+    <div style="margin-top:12px" class="center">
+      <button id="submitDiff" class="btn">Submit</button>
+    </div>
+  </div>
+</div>
+
+<script>
+document.getElementById('submitDiff').addEventListener('click', ()=>{
+
+  window.location.href = 'upcoming.html';
+});
+</script>
+</body></html>
